@@ -45,4 +45,9 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('default', ['js', "less", "minify-css"], function(){});    
+gulp.task('html', function () {
+  return gulp.src('./src/index.html')
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('default', ["html", "js", "less", "minify-css"], function(){});    
